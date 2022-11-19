@@ -1,0 +1,30 @@
+# Types and what they are used for: Query - to retrieve data; Mutation - to change data; Subscription - allows you to create a connect read data and keep
+# that connection open
+
+type Query {
+    allBooks: [Book]
+    findOne(id: ID): Book
+}
+
+
+
+
+type Book {
+    id: ID!
+    title: String
+    pages: Int
+    rating: Rating
+    author: Author
+}
+
+type Rating {
+    rating: String
+    star: String
+}
+
+type Author {
+    id: ID!
+    firstName: String
+    lastName: String
+    Books: [Book]
+}
